@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo nano"hello"
+sudo nano hello
