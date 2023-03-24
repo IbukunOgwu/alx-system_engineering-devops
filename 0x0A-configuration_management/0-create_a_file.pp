@@ -1,7 +1,7 @@
 # file called school in /tmp
 
 file { 'school':
-    path     => '/tmp/holberton',
+    path     => '/tmp/school',
     content  => 'I love Puppet',
     checksum => 'md5',
     group    => 'www-data',
