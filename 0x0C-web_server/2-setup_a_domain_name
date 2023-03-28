@@ -1,1 +1,6 @@
 onuhocholi.tech
+sudo apt-get -y install 
+
+docker exec -i 143742-web-01 apt-get -y update
+docker exec -i 143742-web-01 apt-get install -y apache2
+docker exec -i 143742-web-01 service apache2 start
