@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#This makes nginx to listen on port 80
+{ apt-get install socat -y -q
+socat TCP-LISTEN:80,fork TCP:54.159.1.9:8080 & } &> /dev/null
