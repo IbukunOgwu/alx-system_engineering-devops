@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+#!/usr/bin/env bash
+=======
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License, version 2.0,
 # as published by the Free Software Foundation.
@@ -19,6 +22,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
 #
+>>>>>>> 3528a0476845bdcb88074e53784419ccc7e2ba02
 # The MySQL  Server configuration file.
 #
 # For explanations see
