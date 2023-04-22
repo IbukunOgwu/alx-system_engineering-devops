@@ -1,29 +1,16 @@
 #!/usr/bin/env bash
-#display information about subdomains
+# print domains and subdomains
 
-get_domains() {
-
-    if [ "$2" ]
-    then
-        source=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:')
-        record=$(echo $source | awk '{print $7}')
-        ip=$(echo $source | awk '{print $8}')
-        echo "The subdomain $2 is a $record record and points to $ip"
-        return 0
-    fi
+print_domain_subdomain () {
+    dig "$1" | grep -A1 'ANSWER SECTION:' | sed -r "s/$1./$2/g" | awk -F" " ' NR==2 { print "The subdomain " $1 " is a " $4 " record and points to " $5 }'
 }
 
-subdomains=("web-01" "web-02" "lb-01" "www")
-
-if [ ! "$1" ]
+if [ "$#" -eq 2 ]
 then
-    exit
-elif [ "$2" ]
-then
-    get_domains "$1" "$2"
+    print_domain_subdomain "$2.$1" "$2"
 else
-    get_domains "$1" "${subdomains[3]}"
-    get_domains "$1" "${subdomains[2]}"
-    get_domains "$1" "${subdomains[0]}"
-    get_domains "$1" "${subdomains[1]}"
+    print_domain_subdomain "www.$1" "www"
+    print_domain_subdomain "lb-01.$1" "lb-01"
+    print_domain_subdomain "web-01.$1" "web-01"
+    print_domain_subdomain "web-02.$1" "web-02"
 fi
