@@ -50,6 +50,6 @@ def count_words(subreddit, word_list, instances={}, after="", count=0):
             print("")
             return
         instances = sorted(instances.items(), key=lambda kv: (-kv[1], kv[0]))
-        [print(f"{}: {}".format(k, v)) for k, v in instances]
+        [print("{}: {}".format(k, v)) for k, v in instances]
     else:
         count_words(subreddit, word_list, instances, after, count)
