@@ -3,7 +3,7 @@
 # users, and the values can be changed in per-user configuration files
 # or on the command line.
 
-# This configuration data is parsed as follows:
+# Configuration data is parsed as follows:
 #  1. command line options
 #  2. user-specific file
 #  3. system-wide file
@@ -23,8 +23,8 @@ Host *
 #   RSAAuthentication yes
     PasswordAuthentication no
 #   HostbasedAuthentication no
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials no
+#   GSSAPIAuthentication no
+#   GSSAPIDelegateCredentials no
 #   GSSAPIKeyExchange no
 #   GSSAPITrustDNS no
 #   BatchMode no
@@ -32,9 +32,10 @@ Host *
 #   AddressFamily any
 #   ConnectTimeout 0
 #   StrictHostKeyChecking ask
-    IdentityFile ~/.ssh/school_ssh
+#   IdentityFile ~/.ssh/identity
 #   IdentityFile ~/.ssh/id_rsa
 #   IdentityFile ~/.ssh/id_dsa
+    IdentityFile ~/.ssh/school
 #   Port 22
 #   Protocol 2,1
 #   Cipher 3des
